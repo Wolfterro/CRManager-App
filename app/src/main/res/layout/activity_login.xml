@@ -82,6 +82,7 @@
             android:layout_height="60dp"
             android:layout_margin="10dp"
             android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_extra_bold"
             android:backgroundTint="@color/crmanager_colorPrimaryDark"
             android:text="@string/enter" />
 
@@ -92,6 +93,7 @@
             android:textColor="@color/white"
             android:backgroundTint="@color/crmanager_colorPrimary"
             android:stateListAnimator="@null"
+            android:fontFamily="@font/montserrat_medium"
             android:text="@string/signup" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
