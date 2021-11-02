@@ -5,7 +5,10 @@ public class Utils {
 
     /* Public Methods */
     public static boolean isLogged() {
-        API_KEY = getApiKeyFromStorage();
+        if(API_KEY == null) {
+            API_KEY = getApiKeyFromStorage();
+        }
+
         if(API_KEY == null) {
             return false;
         }

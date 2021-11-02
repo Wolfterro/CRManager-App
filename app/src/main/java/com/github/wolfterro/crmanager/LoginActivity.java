@@ -2,10 +2,15 @@ package com.github.wolfterro.crmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.github.wolfterro.crmanager.login.Login;
+import com.github.wolfterro.crmanager.utils.Utils;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -27,7 +32,26 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email_string = email.getText().toString();
                 String password_string = password.getText().toString();
+
+                startLoginProcess(email_string, password_string);
             }
         });
+    }
+
+    public void startLoginProcess(String email, String password) {
+        Login login = new Login(email, password);
+        try {
+            Utils.API_KEY = login.login();
+        } catch(NullPointerException e) {
+            Toast.makeText(getBaseContext(), getString(R.string.couldNotLogin), Toast.LENGTH_SHORT).show();
+        }
+
+        if(Utils.isLogged()) {
+            Intent intent = new Intent(
+                    LoginActivity.this, MainActivity.class
+            );
+            startActivity(intent);
+            finish();
+        }
     }
 }
