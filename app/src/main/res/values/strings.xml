@@ -7,5 +7,7 @@
     <string name="enter">Entrar</string>
     <string name="signup">Não possui uma conta? Cadastre-se!</string>
 
+    <string name="startLogin">Fazendo login</string>
+    <string name="pleaseStandBy">Por favor, aguarde&#8230;</string>
     <string name="couldNotLogin">Não foi possível fazer o login! Verifique o e-mail e a senha e tente novamente.</string>
 </resources>

@@ -2,6 +2,7 @@ package com.github.wolfterro.crmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -39,29 +40,38 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void startLoginProcess(String email, String password) {
-        Login login = new Login(email, password);
+        ProgressDialog pd = new ProgressDialog(LoginActivity.this);
 
-        try {
-            login.start();
-            login.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        pd.setTitle(getString(R.string.startLogin));
+        pd.setMessage(getString(R.string.pleaseStandBy));
 
-        try {
-            if(Utils.API_KEY == null) {
-                Toast.makeText(getBaseContext(), getString(R.string.couldNotLogin), Toast.LENGTH_SHORT).show();
-            }
-        } catch(NullPointerException e) {
-            Toast.makeText(getBaseContext(), getString(R.string.couldNotLogin), Toast.LENGTH_SHORT).show();
-        }
+        pd.setCancelable(false);
+        pd.show();
 
-        if(Utils.isLogged()) {
-            Intent intent = new Intent(
-                    LoginActivity.this, MainActivity.class
-            );
-            startActivity(intent);
-            finish();
-        }
+        Login login = new Login(email, password, pd, getBaseContext());
+        login.start();
+
+//        try {
+//            login.start();
+//            login.join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            if(Utils.API_KEY == null) {
+//                Toast.makeText(getBaseContext(), getString(R.string.couldNotLogin), Toast.LENGTH_SHORT).show();
+//            }
+//        } catch(NullPointerException e) {
+//            Toast.makeText(getBaseContext(), getString(R.string.couldNotLogin), Toast.LENGTH_SHORT).show();
+//        }
+//
+//        if(Utils.isLogged()) {
+//            Intent intent = new Intent(
+//                    LoginActivity.this, MainActivity.class
+//            );
+//            startActivity(intent);
+//            finish();
+//        }
     }
 }
