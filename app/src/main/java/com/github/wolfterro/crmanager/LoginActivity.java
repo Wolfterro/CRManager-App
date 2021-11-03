@@ -40,8 +40,18 @@ public class LoginActivity extends AppCompatActivity {
 
     public void startLoginProcess(String email, String password) {
         Login login = new Login(email, password);
+
         try {
-            Utils.API_KEY = login.login();
+            login.start();
+            login.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if(Utils.API_KEY == null) {
+                Toast.makeText(getBaseContext(), getString(R.string.couldNotLogin), Toast.LENGTH_SHORT).show();
+            }
         } catch(NullPointerException e) {
             Toast.makeText(getBaseContext(), getString(R.string.couldNotLogin), Toast.LENGTH_SHORT).show();
         }
