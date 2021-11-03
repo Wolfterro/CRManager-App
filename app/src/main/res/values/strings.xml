@@ -10,4 +10,11 @@
     <string name="startLogin">Fazendo login</string>
     <string name="pleaseStandBy">Por favor, aguarde&#8230;</string>
     <string name="couldNotLogin">Não foi possível fazer o login! Verifique o e-mail e a senha e tente novamente.</string>
+
+    <!-- Main Strings -->
+    <string name="addressList">Endereços:</string>
+    <string name="defaultFullName">-</string>
+    <string name="defaultCPF">CPF: -</string>
+    <string name="defaultCR">CR: -</string>
+    <string name="defaultAddress">-</string>
 </resources>

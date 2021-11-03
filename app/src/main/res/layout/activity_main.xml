@@ -6,13 +6,99 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/crmanager_colorPrimary">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/default_avatar"
+                    android:layout_margin="20dp"
+                    app:civ_border_width="5dp"
+                    app:civ_border_color="@color/white"/>
+
+                <TextView
+                    android:id="@+id/userProfileFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/defaultFullName"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textAlignment="center"
+                    android:layout_margin="5dp"/>
+
+                <TextView
+                    android:id="@+id/userProfileCPF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/defaultCPF"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/userProfileCR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/defaultCR"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textAlignment="center"
+                    android:layout_margin="5dp" />
+
+                <TextView
+                    android:id="@+id/addressList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/addressList"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textAlignment="center"
+                    android:layout_margin="5dp" />
+
+                <TextView
+                    android:id="@+id/userProfileMainAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/defaultAddress"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textAlignment="center"
+                    android:layout_margin="8dp" />
+
+                <TextView
+                    android:id="@+id/userProfileSecondAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/defaultAddress"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textAlignment="center"
+                    android:layout_margin="8dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
