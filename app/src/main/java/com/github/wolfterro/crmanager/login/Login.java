@@ -6,24 +6,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.github.wolfterro.crmanager.MainActivity;
 import com.github.wolfterro.crmanager.R;
+import com.github.wolfterro.crmanager.utils.API;
 import com.github.wolfterro.crmanager.utils.Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.IOException;
-
-import okhttp3.Call;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 public class Login extends Thread {
     private String email;
@@ -44,7 +35,7 @@ public class Login extends Thread {
     /* Public Methods */
     @Override
     public void run() {
-        body = getLoginResponse();
+        body = API.getLoginResponse(this.email, this.password);
 
         if(this.body != null) {
             setApiKeyAndUserProfileId();
@@ -55,43 +46,6 @@ public class Login extends Thread {
     }
 
     /* Private Methods */
-    private String getLoginResponse() {
-        OkHttpClient client = new OkHttpClient();
-
-        Request request = new Request.Builder()
-                .url(Utils.BASE_URL + "login/")
-                .post(getRequestBody())
-                .build();
-
-        Call call = client.newCall(request);
-        try {
-            Response response = call.execute();
-            if(response.isSuccessful()) {
-                return response.body().string();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.e("ERROR", e.toString());
-        }
-
-        return null;
-    }
-
-    private RequestBody getRequestBody() {
-        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-
-        JSONObject bodyJson = new JSONObject();
-        try {
-            bodyJson.put("email", this.email);
-            bodyJson.put("password", this.password);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
-        }
-
-        return RequestBody.create(JSON, bodyJson.toString());
-    }
-
     private void setApiKeyAndUserProfileId() {
         try {
             JSONObject json = new JSONObject(this.body);
