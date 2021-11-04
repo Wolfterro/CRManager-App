@@ -33,9 +33,10 @@ public class Utils {
             String complement = addressJson.getString("complement");
             String zipCode = addressJson.getString("zip_code");
             String city = addressJson.getString("city");
+            String neighborhood = addressJson.getString("neighborhood");
             String uf = addressJson.getString("uf");
 
-            String templateString = "%s, %s%s CEP: %s - %s, %s";
+            String templateString = "%s, %s%s CEP: %s - %s - %s, %s";
             if(complement != null || !complement.equals("")) {
                 return String.format(
                         templateString,
@@ -43,6 +44,7 @@ public class Utils {
                         number,
                         String.format(" (%s)", complement),
                         zipCode,
+                        neighborhood,
                         city,
                         uf
                 );
@@ -53,6 +55,7 @@ public class Utils {
                         number,
                         "",
                         zipCode,
+                        neighborhood,
                         city,
                         uf
                 );

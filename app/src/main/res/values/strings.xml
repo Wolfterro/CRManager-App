@@ -14,8 +14,7 @@
     <!-- Main Strings -->
     <string name="addressList">Endereços:</string>
     <string name="defaultFullName">-</string>
-    <string name="defaultCPF">CPF: -</string>
-    <string name="defaultCR">CR: -</string>
+    <string name="defaultCPFAndCR">CPF: - | CR: -</string>
     <string name="defaultAddress">-</string>
 
     <string name="couldNotRetrieveUserProfileInfo">Não foi possível resgatar informações do usuário!</string>
