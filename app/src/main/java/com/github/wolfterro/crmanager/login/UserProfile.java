@@ -1,7 +1,6 @@
 package com.github.wolfterro.crmanager.login;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
