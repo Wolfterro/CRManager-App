@@ -1,5 +1,10 @@
 package com.github.wolfterro.crmanager.utils;
 
+import android.util.Log;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Utils {
     public static boolean isDebug = true;
     public static String BASE_URL = getBaseURL();
@@ -19,6 +24,45 @@ public class Utils {
         }
 
         return true;
+    }
+
+    public static String getFormattedAddressFromJson(JSONObject addressJson) {
+        try {
+            String address = addressJson.getString("address");
+            String number = addressJson.getString("number");
+            String complement = addressJson.getString("complement");
+            String zipCode = addressJson.getString("zip_code");
+            String city = addressJson.getString("city");
+            String uf = addressJson.getString("uf");
+
+            String templateString = "%s, %s%s CEP: %s - %s, %s";
+            if(complement != null || !complement.equals("")) {
+                return String.format(
+                        templateString,
+                        address,
+                        number,
+                        String.format(" (%s)", complement),
+                        zipCode,
+                        city,
+                        uf
+                );
+            } else {
+                return String.format(
+                        templateString,
+                        address,
+                        number,
+                        "",
+                        zipCode,
+                        city,
+                        uf
+                );
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.e("ERROR", e.toString());
+        }
+
+        return "-";
     }
 
     /* Private Methods */

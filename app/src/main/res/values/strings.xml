@@ -17,4 +17,6 @@
     <string name="defaultCPF">CPF: -</string>
     <string name="defaultCR">CR: -</string>
     <string name="defaultAddress">-</string>
+
+    <string name="couldNotRetrieveUserProfileInfo">Não foi possível resgatar informações do usuário!</string>
 </resources>

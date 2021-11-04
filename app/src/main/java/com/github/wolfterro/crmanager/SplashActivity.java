@@ -25,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void showLoginActivityOrMainActivity() {
         Intent intent;
-        boolean isLogged = true; /*Utils.isLogged();*/
+        boolean isLogged = Utils.isLogged();
 
         if(isLogged) {
             intent = new Intent(
