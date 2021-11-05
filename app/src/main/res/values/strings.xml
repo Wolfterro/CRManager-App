@@ -18,4 +18,5 @@
     <string name="defaultAddress">-</string>
 
     <string name="couldNotRetrieveUserProfileInfo">Não foi possível resgatar informações do usuário!</string>
+    <string name="couldNotRetrieveProcessList">Não foi possível resgatar lista de processos do usuário!</string>
 </resources>

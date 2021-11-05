@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.github.wolfterro.crmanager.login.UserProfile;
+import com.github.wolfterro.crmanager.process.Process;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -31,5 +32,9 @@ public class MainActivity extends AppCompatActivity {
         /* Retrieve UserProfile information */
         UserProfile userProfile = new UserProfile(this);
         userProfile.start();
+
+        /* Retrieve Process Information */
+        Process process = new Process(this);
+        process.start();
     }
 }

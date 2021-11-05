@@ -2,6 +2,7 @@ package com.github.wolfterro.crmanager.utils;
 
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -23,29 +24,12 @@ public class API {
                 "user_profile",
                 Utils.USER_PROFILE_ID
         );
-        OkHttpClient client = new OkHttpClient();
+        return getResponse(url);
+    }
 
-        Request request = new Request.Builder()
-                .url(url)
-                .addHeader("Authorization", String.format("Token %s", Utils.API_KEY))
-                .build();
-
-        Call call = client.newCall(request);
-        try {
-            Response response = call.execute();
-            if(response.isSuccessful()) {
-                JSONObject jsonObject = new JSONObject(response.body().string());
-                return jsonObject;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.e("ERROR", e.toString());
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.e("ERROR", e.toString());
-        }
-
-        return null;
+    public static JSONArray getProcessList() {
+        String url = String.format("%s%s", Utils.BASE_URL, "process/");
+        return getResponseList(url);
     }
 
     public static String getLoginResponse(String email, String password) {
@@ -71,6 +55,58 @@ public class API {
     }
 
     /* Private Methods */
+    private static JSONObject getResponse(String url) {
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .addHeader("Authorization", String.format("Token %s", Utils.API_KEY))
+                .build();
+
+        Call call = client.newCall(request);
+        try {
+            Response response = call.execute();
+            if(response.isSuccessful()) {
+                JSONObject jsonObject = new JSONObject(response.body().string());
+                return jsonObject;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e("ERROR", e.toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.e("ERROR", e.toString());
+        }
+
+        return null;
+    }
+
+    private static JSONArray getResponseList(String url) {
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .addHeader("Authorization", String.format("Token %s", Utils.API_KEY))
+                .build();
+
+        Call call = client.newCall(request);
+        try {
+            Response response = call.execute();
+            if(response.isSuccessful()) {
+                JSONArray jsonArray = new JSONArray(response.body().string());
+                return jsonArray;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e("ERROR", e.toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.e("ERROR", e.toString());
+        }
+
+        return null;
+    }
+
     private static RequestBody getRequestBody(String email, String password) {
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
