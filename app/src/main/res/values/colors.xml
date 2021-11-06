@@ -14,4 +14,5 @@
     <color name="crmanager_colorPrimaryAlt">#80d8ff</color>
     <color name="crmanager_yellow">#ffeb3b</color>
     <color name="crmanager_black">#212121</color>
+    <color name="crmanager_blue">#29b6f6</color>
 </resources>

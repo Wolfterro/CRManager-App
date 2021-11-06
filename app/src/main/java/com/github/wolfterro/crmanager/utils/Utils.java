@@ -33,14 +33,20 @@ public class Utils {
         try {
             String address = addressJson.getString("address");
             String number = addressJson.getString("number");
-            String complement = addressJson.getString("complement");
+            String complement = null;
+            if(!addressJson.isNull("complement")) {
+               complement = addressJson.getString("complement");
+            } else {
+                complement = "";
+            }
+
             String zipCode = addressJson.getString("zip_code");
             String city = addressJson.getString("city");
             String neighborhood = addressJson.getString("neighborhood");
             String uf = addressJson.getString("uf");
 
             String templateString = "%s, %s%s CEP: %s - %s - %s, %s";
-            if(complement != null || !complement.equals("")) {
+            if(!complement.equals("")) {
                 return String.format(
                         templateString,
                         address,

@@ -11,8 +11,6 @@ import com.github.wolfterro.crmanager.adapters.ProcessListAdapter;
 import com.github.wolfterro.crmanager.utils.API;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class Process extends Thread {
     public Activity activity;
@@ -30,15 +28,13 @@ public class Process extends Thread {
 
         if(processList != null) {
             this.processList = processList;
-            setProcessListOnActivity(processList);
+            setProcessListOnActivity();
         } else {
             showToast(this.activity, this.activity.getString(R.string.couldNotRetrieveProcessList));
         }
     }
 
-    public void setProcessListOnActivity(JSONArray processList) {
-//        this.processListView.setHasFixedSize(true);
-
+    public void setProcessListOnActivity() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.activity);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         this.processListView.setLayoutManager(linearLayoutManager);
