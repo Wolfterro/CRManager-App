@@ -4,7 +4,7 @@
     android:id="@+id/processListRelativeLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/crmanager_colorPrimaryAlt">
+    android:background="@color/crmanager_colorPrimaryDark">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                 android:id="@+id/processInstanceProtocolNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_medium"
+                android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/crmanager_colorPrimaryDark"
                 android:textSize="16sp"
                 android:layout_marginBottom="10dp"
@@ -66,8 +66,8 @@
                 android:fontFamily="@font/montserrat_medium"
                 android:textColor="@color/crmanager_colorPrimaryDark"
                 android:textSize="14sp"
-                android:layout_marginTop="5dp"
-                tools:text="1x Taurus RT444" />
+                android:layout_marginTop="10dp"
+                tools:text="1x Taurus RT444 (Arma de Fogo)" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

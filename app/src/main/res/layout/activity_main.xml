@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/crmanager_colorPrimaryAlt"
-    android:backgroundTint="@color/crmanager_colorPrimaryAlt"
+    android:background="@color/crmanager_colorPrimaryDark"
+    android:backgroundTint="@color/crmanager_colorPrimaryDark"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -100,8 +100,8 @@
                 android:id="@+id/processListRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/crmanager_colorPrimaryAlt"
-                android:backgroundTint="@color/crmanager_colorPrimaryAlt"
+                android:background="@color/crmanager_colorPrimaryDark"
+                android:backgroundTint="@color/crmanager_colorPrimaryDark"
                 tools:listitem="@layout/process_list_view"/>
 
         </LinearLayout>

@@ -81,10 +81,11 @@ public class ProcessListAdapter extends RecyclerView.Adapter<ProcessViewHolder>{
 
                 holder.processPCE.setText(
                         String.format(
-                                "%dx %s %s",
+                                "%dx %s %s (%s)",
                                 pce.getInt("quantity"),
                                 pce.getString("manufacturer"),
-                                pce.getString("name")
+                                pce.getString("name"),
+                                pce.getString("pce_type_label")
                         )
                 );
             } else {
