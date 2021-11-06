@@ -28,17 +28,21 @@ public class UserProfile extends Thread {
     @Override
     public void run() {
         JSONObject userProfile = API.getUserProfileInfo();
+        this.userProfile = userProfile;
 
-        if(userProfile != null) {
-            this.userProfile = userProfile;
-            setUserProfileValuesOnActivity(userProfile);
-        } else {
-            Toast.makeText(
-                    this.activity.getBaseContext(),
-                    this.activity.getString(R.string.couldNotRetrieveUserProfileInfo),
-                    Toast.LENGTH_LONG
-            ).show();
-        }
+        this.activity.runOnUiThread(new Runnable() {
+            public void run() {
+                if(userProfile != null) {
+                    setUserProfileValuesOnActivity(userProfile);
+                } else {
+                    Toast.makeText(
+                            activity.getBaseContext(),
+                            activity.getString(R.string.couldNotRetrieveUserProfileInfo),
+                            Toast.LENGTH_LONG
+                    ).show();
+                }
+            }
+        });
     }
 
     public void setUserProfileValuesOnActivity(JSONObject userProfile) {

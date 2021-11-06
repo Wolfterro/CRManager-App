@@ -43,5 +43,7 @@ public class MainActivity extends AppCompatActivity {
         /* Retrieve Process Information */
         Process process = new Process(this, recyclerView);
         process.start();
+
+        // TODO: Create ProcessAddView and map it to the floating action button
     }
 }

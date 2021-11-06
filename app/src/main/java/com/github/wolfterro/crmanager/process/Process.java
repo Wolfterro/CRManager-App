@@ -25,13 +25,21 @@ public class Process extends Thread {
     @Override
     public void run() {
         JSONArray processList = API.getProcessList();
+        this.processList = processList;
 
-        if(processList != null) {
-            this.processList = processList;
-            setProcessListOnActivity();
-        } else {
-            showToast(this.activity, this.activity.getString(R.string.couldNotRetrieveProcessList));
-        }
+        this.activity.runOnUiThread(new Runnable() {
+            public void run() {
+                if(processList != null) {
+                    setProcessListOnActivity();
+                } else {
+                    Toast.makeText(
+                            activity,
+                            activity.getString(R.string.couldNotRetrieveProcessList),
+                            Toast.LENGTH_LONG
+                    ).show();
+                }
+            }
+        });
     }
 
     public void setProcessListOnActivity() {
@@ -41,13 +49,5 @@ public class Process extends Thread {
 
         ProcessListAdapter processListAdapter = new ProcessListAdapter(this.processList, this.activity);
         this.processListView.setAdapter(processListAdapter);
-    }
-
-    public void showToast(Activity activity, String message) {
-        this.activity.runOnUiThread(new Runnable() {
-            public void run() {
-                Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
-            }
-        });
     }
 }
