@@ -9,8 +9,8 @@ public class Utils {
     public static boolean isDebug = true;
     public static String BASE_URL = getBaseURL();
 
-    public static String USER_PROFILE_ID = null;
-    public static String API_KEY = null;
+    public static String USER_PROFILE_ID = null; // "8"
+    public static String API_KEY = null; // "0802048490c5e5f6e56581360484c8eb9c41de4e";
 
     /* Public Methods */
     public static boolean isLogged() {

@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/crmanager_colorPrimaryAlt"
+    android:backgroundTint="@color/crmanager_colorPrimaryAlt"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -13,8 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/crmanager_colorPrimaryAlt">
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -95,20 +96,13 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/processListRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/processListLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <!-- Insert process cards here! -->
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                android:layout_height="match_parent"
+                android:background="@color/crmanager_colorPrimaryAlt"
+                android:backgroundTint="@color/crmanager_colorPrimaryAlt"
+                tools:listitem="@layout/process_list_view"/>
 
         </LinearLayout>
 
