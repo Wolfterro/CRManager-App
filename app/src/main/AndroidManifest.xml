@@ -12,11 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CRManager">
 
+        <!-- ProcessAddActivity -->
+        <activity
+            android:name=".ProcessAddActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CRManager.NoActionBar.FullScreen"/>
+
         <!-- LoginActivity -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.CRManager.NoActionBar.FullScreen"/>
+            android:theme="@style/Theme.CRManager.NoActionBar.FullScreen" />
 
         <!-- SplashActivity -->
         <activity
@@ -25,6 +31,7 @@
             android:theme="@style/Theme.CRManager.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gru_status_array">
+        <item value="payed">Paga</item>
+        <item value="pending">Pendente</item>
+        <item value="other">Outro</item>
+    </string-array>
+</resources>

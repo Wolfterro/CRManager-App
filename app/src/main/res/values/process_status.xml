@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="process_status_array">
+        <item value="deferred">Deferido</item>
+        <item value="in_analysis">Em Análise</item>
+        <item value="pending">Pendente</item>
+        <item value="refunded">Restituído</item>
+        <item value="rejected">Indeferido</item>
+        <item value="other">Outro</item>
+    </string-array>
+</resources>

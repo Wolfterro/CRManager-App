@@ -19,4 +19,18 @@
 
     <string name="couldNotRetrieveUserProfileInfo">Não foi possível resgatar informações do usuário!</string>
     <string name="couldNotRetrieveProcessList">Não foi possível resgatar lista de processos do usuário!</string>
+
+    <!-- ProcessAdd Strings -->
+    <string name="addProcess">Adicionar Processo</string>
+    <string name="protocolNumber">Nº de Protocolo:</string>
+    <string name="entryDate">Data de Entrada:</string>
+    <string name="serviceType">Tipo de Serviço:</string>
+    <string name="status">Status:</string>
+    <string name="OM">Organização Militar (OM):</string>
+    <string name="gruStatus">Status da GRU:</string>
+    <string name="gruEntryDate">Data de Compensação da GRU:</string>
+    <string name="PCE">Produto Controlado (PCE):</string>
+    <string name="add">Cadastrar</string>
+
+    <string name="processAdded">Processo adicionado!</string>
 </resources>

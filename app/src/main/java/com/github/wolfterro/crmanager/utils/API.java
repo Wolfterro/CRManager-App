@@ -32,6 +32,11 @@ public class API {
         return getResponseList(url);
     }
 
+    public static JSONArray getServiceTypeList() {
+        String url = String.format("%s%s", Utils.BASE_URL, "service_type/");
+        return getResponseList(url);
+    }
+
     public static String getLoginResponse(String email, String password) {
         OkHttpClient client = new OkHttpClient();
 
