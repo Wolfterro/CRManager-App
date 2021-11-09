@@ -17,6 +17,7 @@ public class ProcessAddActivity extends AppCompatActivity {
     public Spinner gruStatus;
     public Spinner processStatus;
     public Spinner serviceType;
+    public Spinner pceType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +28,11 @@ public class ProcessAddActivity extends AppCompatActivity {
         gruStatus = (Spinner) findViewById(R.id.processGRUStatusSpinner);
         processStatus = (Spinner) findViewById(R.id.processStatusSpinner);
         serviceType = (Spinner) findViewById(R.id.serviceTypeSpinner);
+        pceType = (Spinner) findViewById(R.id.processPCEType);
 
         setGruStatusSpinner();
         setProcessStatusSpinner();
+        setPCETypeSpinner();
         setServiceTypeSpinner();
 
         addProcess.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +65,17 @@ public class ProcessAddActivity extends AppCompatActivity {
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         processStatus.setAdapter(adapter);
+    }
+
+    private void setPCETypeSpinner() {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.pce_type_array,
+                R.layout.custom_spinner_item
+        );
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        pceType.setAdapter(adapter);
     }
 
     private void setServiceTypeSpinner() {

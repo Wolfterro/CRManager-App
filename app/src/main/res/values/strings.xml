@@ -30,6 +30,11 @@
     <string name="gruStatus">Status da GRU:</string>
     <string name="gruEntryDate">Data de Compensação da GRU:</string>
     <string name="PCE">Produto Controlado (PCE):</string>
+    <string name="name">Nome:</string>
+    <string name="manufacturer">Fabricante:</string>
+    <string name="pceType">Tipo de PCE:</string>
+    <string name="quantity">Quantidade:</string>
+
     <string name="add">Cadastrar</string>
 
     <string name="processAdded">Processo adicionado!</string>

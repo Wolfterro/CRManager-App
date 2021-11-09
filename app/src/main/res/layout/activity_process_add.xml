@@ -177,6 +177,83 @@
                         android:textSize="16sp"
                         android:layout_margin="10dp"
                         android:text="@string/PCE" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/name" />
+
+                    <EditText
+                        android:id="@+id/editTextPCEName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="text" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/manufacturer" />
+
+                    <EditText
+                        android:id="@+id/editTextPCEManufacturer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="text" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/pceType" />
+
+                    <Spinner
+                        android:id="@+id/processPCEType"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/quantity" />
+
+                    <EditText
+                        android:id="@+id/editTextPCEQuantity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="numberSigned" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

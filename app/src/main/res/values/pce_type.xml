@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pce_type_array">
+        <item value="firearm">Arma de Fogo</item>
+        <item value="ammo">Munição</item>
+        <item value="reloading_tool">Máquina de Recarga</item>
+        <item value="dies">Dies</item>
+        <item value="other">Outro</item>
+    </string-array>
+</resources>
