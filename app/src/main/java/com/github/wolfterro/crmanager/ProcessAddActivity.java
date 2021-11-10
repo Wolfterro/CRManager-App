@@ -2,13 +2,14 @@ package com.github.wolfterro.crmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
+import com.github.wolfterro.crmanager.process.ProcessAdd;
 import com.github.wolfterro.crmanager.process.ServiceType;
 
 public class ProcessAddActivity extends AppCompatActivity {
@@ -19,10 +20,14 @@ public class ProcessAddActivity extends AppCompatActivity {
     public Spinner serviceType;
     public Spinner pceType;
 
+    public Activity instance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_process_add);
+
+        this.instance = this;
 
         addProcess = (Button) findViewById(R.id.addProcessButton);
         gruStatus = (Spinner) findViewById(R.id.processGRUStatusSpinner);
@@ -38,9 +43,8 @@ public class ProcessAddActivity extends AppCompatActivity {
         addProcess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: Create ProcessAdd class to validate data send POST request
-                Toast.makeText(getBaseContext(), getString(R.string.processAdded), Toast.LENGTH_LONG).show();   // TODO: Move it to ProcessAdd class
-                onBackPressed();
+                ProcessAdd processAdd = new ProcessAdd(instance);
+                processAdd.start();
             }
         });
     }

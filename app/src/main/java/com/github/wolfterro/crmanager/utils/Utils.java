@@ -1,9 +1,14 @@
 package com.github.wolfterro.crmanager.utils;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class Utils {
     public static boolean isDebug = true;
@@ -14,6 +19,8 @@ public class Utils {
 
     public static String USER_PROFILE_ID = "8";
     public static String API_KEY = "0802048490c5e5f6e56581360484c8eb9c41de4e";
+
+    public static ArrayList<String> serviceTypeValuesList = new ArrayList<>();
 
     /* Public Methods */
     public static boolean isLogged() {
@@ -75,6 +82,21 @@ public class Utils {
         }
 
         return "-";
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    public static String formatDate(String date) {
+        SimpleDateFormat fromUser = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        String newFormat = date;
+        try {
+            newFormat = myFormat.format(fromUser.parse(date));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return newFormat;
     }
 
     /* Private Methods */

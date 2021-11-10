@@ -7,4 +7,12 @@
         <item value="dies">Dies</item>
         <item value="other">Outro</item>
     </string-array>
+
+    <string-array name="pce_type_array_value">
+        <item value="firearm">firearm</item>
+        <item value="ammo">ammo</item>
+        <item value="reloading_tool">reloading_tool</item>
+        <item value="dies">dies</item>
+        <item value="other">other</item>
+    </string-array>
 </resources>

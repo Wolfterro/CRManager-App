@@ -6,6 +6,7 @@ import android.widget.Spinner;
 
 import com.github.wolfterro.crmanager.R;
 import com.github.wolfterro.crmanager.utils.API;
+import com.github.wolfterro.crmanager.utils.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,6 +43,7 @@ public class ServiceType extends Thread {
             try {
                 JSONObject service = this.serviceType.getJSONObject(i);
                 serviceTypeList.add(service.getString("label"));
+                Utils.serviceTypeValuesList.add(service.getString("value"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }

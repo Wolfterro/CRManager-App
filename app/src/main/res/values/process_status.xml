@@ -8,4 +8,13 @@
         <item value="rejected">Indeferido</item>
         <item value="other">Outro</item>
     </string-array>
+
+    <string-array name="process_status_array_value">
+        <item value="deferred">deferred</item>
+        <item value="in_analysis">in_analysis</item>
+        <item value="pending">pending</item>
+        <item value="refunded">refunded</item>
+        <item value="rejected">rejected</item>
+        <item value="other">other</item>
+    </string-array>
 </resources>
