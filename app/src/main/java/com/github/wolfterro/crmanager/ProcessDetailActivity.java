@@ -27,6 +27,7 @@ public class ProcessDetailActivity extends AppCompatActivity {
     public TextView protocol;
     public TextView entryDate;
     public TextView status;
+    public TextView reason;
     public TextView service;
     public TextView OM;
     public TextView gruStatus;
@@ -49,6 +50,7 @@ public class ProcessDetailActivity extends AppCompatActivity {
         entryDate = (TextView) findViewById(R.id.textViewEntryDateDetail);
         service = (TextView) findViewById(R.id.textViewServiceTypeDetail);
         status = (TextView) findViewById(R.id.textViewStatusDetail);
+        reason = (TextView) findViewById(R.id.textViewReasonDetail);
         OM = (TextView) findViewById(R.id.textViewOMDetail);
         gruStatus = (TextView) findViewById(R.id.textViewGruStatusDetail);
         gruCompensationDate = (TextView) findViewById(R.id.textViewGruEntryDateDetail);
@@ -122,6 +124,7 @@ public class ProcessDetailActivity extends AppCompatActivity {
             entryDate.setText(Utils.formatDateReverse(valueOrDefaultString(this.processDetail,"entry_date", "-")));
             service.setText(valueOrDefaultString(this.processDetail,"service_label", "-"));
             status.setText(valueOrDefaultString(this.processDetail,"status_label", "-"));
+            reason.setText(valueOrDefaultString(this.processDetail, "reason", "-"));
             OM.setText(valueOrDefaultString(this.processDetail,"om", "-"));
             gruStatus.setText(valueOrDefaultString(this.processDetail,"gru_status_label", "-"));
             gruCompensationDate.setText(Utils.formatDateReverse(valueOrDefaultString(this.processDetail,"gru_compensation_date", "-")));

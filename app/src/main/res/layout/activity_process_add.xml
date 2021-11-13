@@ -124,6 +124,27 @@
                         android:layout_margin="10dp" />
 
                     <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/reason" />
+
+                    <EditText
+                        android:id="@+id/editTextReason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:inputType="text"
+                        android:maxLength="255" />
+
+                    <TextView
                         android:id="@+id/textView11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -141,7 +162,8 @@
                         android:layout_margin="5dp"
                         android:textColor="@color/crmanager_colorPrimaryDark"
                         android:fontFamily="@font/montserrat_medium"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:maxLength="100" />
 
                     <TextView
                         android:id="@+id/textView12"

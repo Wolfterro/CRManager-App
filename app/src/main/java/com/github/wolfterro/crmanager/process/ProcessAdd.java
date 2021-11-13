@@ -24,6 +24,7 @@ public class ProcessAdd extends Thread {
     public EditText entryDate;
     public EditText gruEntryDate;
     public EditText OM;
+    public EditText reason;
 
     public EditText name;
     public EditText manufacturer;
@@ -103,6 +104,12 @@ public class ProcessAdd extends Thread {
         bodyHash.put("om", this.OM.getText().toString());
         bodyHash.put("gru_status", getGRUStatusValue());
 
+        if(!this.reason.getText().toString().equals("")) {
+            bodyHash.put("reason", this.reason.getText().toString());
+        } else {
+            bodyHash.put("reason", null);
+        }
+
         if(this.gruEntryDate.getText() != null) {
             bodyHash.put("gru_compensation_date", Utils.formatDate(this.gruEntryDate.getText().toString()));
         } else {
@@ -130,6 +137,7 @@ public class ProcessAdd extends Thread {
         entryDate = (EditText) this.activity.findViewById(R.id.editTextEntryDate);
         gruEntryDate = (EditText) this.activity.findViewById(R.id.editTextGRUEntryDate);
         OM = (EditText) this.activity.findViewById(R.id.editTextOM);
+        reason = (EditText) this.activity.findViewById(R.id.editTextReason);
 
         gruStatus = (Spinner) this.activity.findViewById(R.id.processGRUStatusSpinner);
         processStatus = (Spinner) this.activity.findViewById(R.id.processStatusSpinner);
