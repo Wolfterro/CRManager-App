@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.github.wolfterro.crmanager.R;
 import com.github.wolfterro.crmanager.utils.Utils;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -39,6 +40,20 @@ public class ProcessAdd extends Thread {
     public void run() {
         instantiateElements();
         JSONObject body = getBody();
+
+        if(!validateFields(body)) {
+            this.activity.runOnUiThread(new Runnable() {
+                public void run() {
+                    Toast.makeText(
+                            activity.getBaseContext(),
+                            activity.getString(R.string.addRequiredFieldsWarning),
+                            Toast.LENGTH_LONG
+                    ).show();
+                }
+            });
+
+            return;
+        }
 
         // TODO: Send POST request with body
 
@@ -75,7 +90,7 @@ public class ProcessAdd extends Thread {
             bodyHash.put("gru_compensation_date", null);
         }
 
-        if(this.name.getText() != null && this.manufacturer.getText() != null && this.quantity.getText() != null) {
+        if(this.name.getText().equals("") && this.manufacturer.getText().equals("") && this.quantity.getText().equals("")) {
             pceHash.put("name", this.name.getText().toString());
             pceHash.put("manufacturer", this.manufacturer.getText().toString());
             pceHash.put("quantity", Integer.parseInt(this.quantity.getText().toString()));
@@ -128,5 +143,33 @@ public class ProcessAdd extends Thread {
         String[] gruStatusArray = this.activity.getResources().getStringArray(R.array.gru_status_array_value);
 
         return gruStatusArray[index];
+    }
+
+    private Boolean validateFields(JSONObject body) {
+        try {
+            if(body.get("protocol").equals("") || body.isNull("protocol")) {
+                return false;
+            }
+            if(body.get("entry_date").equals("") || body.isNull("entry_date")) {
+                return false;
+            }
+            if(body.get("service").equals("") || body.isNull("service")) {
+                return false;
+            }
+            if(body.get("status").equals("") || body.isNull("status")) {
+                return false;
+            }
+            if(body.get("om").equals("") || body.isNull("om")) {
+                return false;
+            }
+            if(body.get("gru_status").equals("") || body.isNull("gru_status")) {
+                return false;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
     }
 }
