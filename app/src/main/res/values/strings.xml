@@ -27,7 +27,7 @@
     <string name="entryDate">Data de Entrada: *</string>
     <string name="serviceType">Tipo de Serviço: *</string>
     <string name="status">Status: *</string>
-    <string name="reason">Motivo</string>
+    <string name="reason">Motivo:</string>
     <string name="OM">Organização Militar (OM): *</string>
     <string name="gruStatus">Status da GRU: *</string>
     <string name="gruEntryDate">Data de Compensação da GRU:</string>
