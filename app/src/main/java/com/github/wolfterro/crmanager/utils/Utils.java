@@ -99,6 +99,25 @@ public class Utils {
         return newFormat;
     }
 
+    @SuppressLint("SimpleDateFormat")
+    public static String formatDateReverse(String date) {
+        if(date == null || date.equals("-")) {
+            return date;
+        }
+
+        SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd");
+
+        String newFormat = date;
+        try {
+            newFormat = myFormat.format(fromUser.parse(date));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return newFormat;
+    }
+
     /* Private Methods */
     private static String getApiKeyFromStorage() {
         /* TODO: Create storage to store ApiKey from logged user */

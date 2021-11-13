@@ -103,8 +103,8 @@ public class ProcessAdd extends Thread {
         bodyHash.put("om", this.OM.getText().toString());
         bodyHash.put("gru_status", getGRUStatusValue());
 
-        if(this.entryDate.getText() != null) {
-            bodyHash.put("gru_compensation_date", Utils.formatDate(this.entryDate.getText().toString()));
+        if(this.gruEntryDate.getText() != null) {
+            bodyHash.put("gru_compensation_date", Utils.formatDate(this.gruEntryDate.getText().toString()));
         } else {
             bodyHash.put("gru_compensation_date", null);
         }

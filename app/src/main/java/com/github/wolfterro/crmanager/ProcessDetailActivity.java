@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.github.wolfterro.crmanager.process.ProcessDelete;
 import com.github.wolfterro.crmanager.utils.API;
+import com.github.wolfterro.crmanager.utils.Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -118,12 +119,12 @@ public class ProcessDetailActivity extends AppCompatActivity {
             String protocolValue = this.processDetail.getString("protocol");
             protocol.setText(String.format("%s %s", getString(R.string.protocolNumberDetail), protocolValue));
 
-            entryDate.setText(valueOrDefaultString(this.processDetail,"entry_date", "-"));
+            entryDate.setText(Utils.formatDateReverse(valueOrDefaultString(this.processDetail,"entry_date", "-")));
             service.setText(valueOrDefaultString(this.processDetail,"service_label", "-"));
             status.setText(valueOrDefaultString(this.processDetail,"status_label", "-"));
             OM.setText(valueOrDefaultString(this.processDetail,"om", "-"));
             gruStatus.setText(valueOrDefaultString(this.processDetail,"gru_status_label", "-"));
-            gruCompensationDate.setText(valueOrDefaultString(this.processDetail,"gru_compensation_date", "-"));
+            gruCompensationDate.setText(Utils.formatDateReverse(valueOrDefaultString(this.processDetail,"gru_compensation_date", "-")));
 
             if(!this.processDetail.isNull("pce")) {
                 JSONObject pceJson = this.processDetail.getJSONObject("pce");
