@@ -1,11 +1,13 @@
 package com.github.wolfterro.crmanager.process;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.github.wolfterro.crmanager.R;
+import com.github.wolfterro.crmanager.utils.API;
 import com.github.wolfterro.crmanager.utils.Utils;
 
 import org.json.JSONException;
@@ -55,14 +57,31 @@ public class ProcessAdd extends Thread {
             return;
         }
 
-        // TODO: Send POST request with body
+        int status = API.createProcess(body);
 
-        this.activity.runOnUiThread(new Runnable() {
-            public void run() {
-                Toast.makeText(activity.getBaseContext(), activity.getString(R.string.processAdded), Toast.LENGTH_LONG).show();
-                activity.onBackPressed();
-            }
-        });
+        if(status == 201) {
+            this.activity.runOnUiThread(new Runnable() {
+                public void run() {
+                    Toast.makeText(
+                            activity.getBaseContext(),
+                            activity.getString(R.string.processAdded),
+                            Toast.LENGTH_LONG
+                    ).show();
+                    activity.onBackPressed();
+                }
+            });
+        } else {
+            this.activity.runOnUiThread(new Runnable() {
+                @SuppressLint("DefaultLocale")
+                public void run() {
+                    Toast.makeText(
+                            activity.getBaseContext(),
+                            String.format("%s - Erro: %d", activity.getString(R.string.couldNotCreateProcess), status),
+                            Toast.LENGTH_LONG
+                    ).show();
+                }
+            });
+        }
     }
 
     // Private Methods
@@ -90,7 +109,10 @@ public class ProcessAdd extends Thread {
             bodyHash.put("gru_compensation_date", null);
         }
 
-        if(this.name.getText().equals("") && this.manufacturer.getText().equals("") && this.quantity.getText().equals("")) {
+        if(!this.name.getText().toString().equals("") &&
+            !this.manufacturer.getText().toString().equals("") &&
+            !this.quantity.getText().toString().equals(""))
+        {
             pceHash.put("name", this.name.getText().toString());
             pceHash.put("manufacturer", this.manufacturer.getText().toString());
             pceHash.put("quantity", Integer.parseInt(this.quantity.getText().toString()));

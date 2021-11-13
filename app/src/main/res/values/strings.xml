@@ -39,5 +39,6 @@
     <string name="add">Cadastrar</string>
 
     <string name="addRequiredFieldsWarning">Por favor, preencha todos os campos obrigatórios!</string>
+    <string name="couldNotCreateProcess">Não foi possível criar o processo!</string>
     <string name="processAdded">Processo adicionado!</string>
 </resources>

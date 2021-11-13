@@ -59,6 +59,27 @@ public class API {
         return null;
     }
 
+    public static int createProcess(JSONObject body) {
+        OkHttpClient client = new OkHttpClient();
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
+        Request request = new Request.Builder()
+                .url(Utils.BASE_URL + "process/")
+                .addHeader("Authorization", String.format("Token %s", Utils.API_KEY))
+                .post(RequestBody.create(JSON, body.toString()))
+                .build();
+
+        Call call = client.newCall(request);
+        try {
+            Response response = call.execute();
+            return response.code();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e("ERROR", e.toString());
+            return 0;
+        }
+    }
+
     /* Private Methods */
     private static JSONObject getResponse(String url) {
         OkHttpClient client = new OkHttpClient();
