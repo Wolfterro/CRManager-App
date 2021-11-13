@@ -41,4 +41,28 @@
     <string name="addRequiredFieldsWarning">Por favor, preencha todos os campos obrigatórios!</string>
     <string name="couldNotCreateProcess">Não foi possível criar o processo!</string>
     <string name="processAdded">Processo adicionado!</string>
+
+    <!-- ProcessDetail Strings -->
+    <string name="emptyValue">-</string>
+    <string name="protocolNumberDetail">Nº de Protocolo: </string>
+    <string name="entryDateDetail">Data de Entrada: </string>
+    <string name="serviceTypeDetail">Tipo de Serviço: </string>
+    <string name="statusDetail">Status: </string>
+    <string name="OMDetail">Organização Militar (OM): </string>
+    <string name="gruStatusDetail">Status da GRU: </string>
+    <string name="gruEntryDateDetail">Data de Compensação da GRU: </string>
+    <string name="PCEDetail">Produto Controlado (PCE): </string>
+    <string name="nameDetail">Nome: </string>
+    <string name="manufacturerDetail">Fabricante: </string>
+    <string name="pceTypeDetail">Tipo de PCE: </string>
+    <string name="quantityDetail">Quantidade: </string>
+
+    <string name="delete">Remover</string>
+
+    <string name="confirmDeleteTitle">Remover processo</string>
+    <string name="confirmDeleteDialog">Tem certeza que deseja remover este processo?</string>
+    <string name="processDeletedMessage">Processo removido com sucesso!</string>
+    <string name="couldNotDeleteProcessMessage">Não foi possível remover o processo!</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
 </resources>

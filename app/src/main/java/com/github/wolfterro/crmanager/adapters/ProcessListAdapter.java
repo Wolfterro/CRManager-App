@@ -2,12 +2,17 @@ package com.github.wolfterro.crmanager.adapters;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.github.wolfterro.crmanager.ProcessAddActivity;
+import com.github.wolfterro.crmanager.ProcessDetailActivity;
 import com.github.wolfterro.crmanager.R;
 
 import org.json.JSONArray;
@@ -50,6 +55,7 @@ public class ProcessListAdapter extends RecyclerView.Adapter<ProcessViewHolder>{
 
     @SuppressLint("DefaultLocale")
     public void setProcessInformation(ProcessViewHolder holder, int pos) {
+
         try {
             JSONObject processJson = this.processList.getJSONObject(pos);
 
@@ -91,6 +97,16 @@ public class ProcessListAdapter extends RecyclerView.Adapter<ProcessViewHolder>{
             } else {
                 holder.processPCE.setText("-");
             }
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(activity, ProcessDetailActivity.class);
+                    i.putExtra("PROCESS_JSON", processJson.toString());
+
+                    activity.startActivity(i);
+                }
+            });
         } catch (JSONException e) {
             e.printStackTrace();
             Log.e("ERROR", e.toString());

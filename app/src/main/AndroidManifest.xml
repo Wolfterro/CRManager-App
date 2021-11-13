@@ -12,11 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CRManager">
 
+        <!-- ProcessDetailActivity -->
+        <activity
+            android:name=".ProcessDetailActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CRManager.NoActionBar.FullScreen" />
+
         <!-- ProcessAddActivity -->
         <activity
             android:name=".ProcessAddActivity"
             android:exported="true"
-            android:theme="@style/Theme.CRManager.NoActionBar.FullScreen"/>
+            android:theme="@style/Theme.CRManager.NoActionBar.FullScreen" />
 
         <!-- LoginActivity -->
         <activity
@@ -40,8 +46,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.CRManager.NoActionBar.FullScreen">
-        </activity>
+            android:theme="@style/Theme.CRManager.NoActionBar.FullScreen" />
     </application>
 
 </manifest>

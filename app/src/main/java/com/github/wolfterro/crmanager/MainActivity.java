@@ -37,14 +37,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.processListRecyclerView);
         actionButton = (FloatingActionButton) findViewById(R.id.addProcessActionButton);
 
-//        /* Retrieve UserProfile information */
-//        UserProfile userProfile = new UserProfile(this);
-//        userProfile.start();
-//
-//        /* Retrieve Process Information */
-//        Process process = new Process(this, recyclerView);
-//        process.start();
-//
         actionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

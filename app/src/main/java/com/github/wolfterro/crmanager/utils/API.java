@@ -1,5 +1,6 @@
 package com.github.wolfterro.crmanager.utils;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -7,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.ProtocolException;
 
 import okhttp3.Call;
 import okhttp3.MediaType;
@@ -73,6 +75,29 @@ public class API {
         try {
             Response response = call.execute();
             return response.code();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e("ERROR", e.toString());
+            return 0;
+        }
+    }
+
+    @SuppressLint("DefaultLocale")
+    public static int deleteProcess(int id) {
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url(String.format("%s%s%d/", Utils.BASE_URL, "process/", id))
+                .addHeader("Authorization", String.format("Token %s", Utils.API_KEY))
+                .delete()
+                .build();
+
+        Call call = client.newCall(request);
+        try {
+            Response response = call.execute();
+            return response.code();
+        } catch (ProtocolException e) {
+            return 204;
         } catch (IOException e) {
             e.printStackTrace();
             Log.e("ERROR", e.toString());

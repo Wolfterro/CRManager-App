@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/crmanager_colorPrimary"
+    tools:context=".ProcessDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textViewProtocolDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/protocolNumberDetail" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/entryDateDetail" />
+
+                    <TextView
+                        android:id="@+id/textViewEntryDateDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/emptyValue" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/serviceTypeDetail" />
+
+                    <TextView
+                        android:id="@+id/textViewServiceTypeDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/emptyValue" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/statusDetail" />
+
+                    <TextView
+                        android:id="@+id/textViewStatusDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/emptyValue" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/OMDetail" />
+
+                    <TextView
+                        android:id="@+id/textViewOMDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/emptyValue" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/gruStatusDetail" />
+
+                    <TextView
+                        android:id="@+id/textViewGruStatusDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/emptyValue" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/gruEntryDateDetail" />
+
+                    <TextView
+                        android:id="@+id/textViewGruEntryDateDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/emptyValue" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="16sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/PCEDetail" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/nameDetail" />
+
+                    <TextView
+                        android:id="@+id/textViewNameDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="14sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/emptyValue" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/manufacturerDetail" />
+
+                    <TextView
+                        android:id="@+id/textViewManufacturerDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="14sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/emptyValue" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/pceTypeDetail" />
+
+                    <TextView
+                        android:id="@+id/textViewPceTypeDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="14sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/emptyValue" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/quantityDetail" />
+
+                    <TextView
+                        android:id="@+id/textViewQuantityDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/crmanager_colorPrimaryDark"
+                        android:textSize="14sp"
+                        android:layout_margin="10dp"
+                        android:text="@string/emptyValue" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/deleteProcessButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/crmanager_red"
+                android:text="@string/delete" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
