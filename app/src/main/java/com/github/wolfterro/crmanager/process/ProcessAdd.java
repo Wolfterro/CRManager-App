@@ -2,6 +2,7 @@ package com.github.wolfterro.crmanager.process;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ import java.util.HashMap;
 
 public class ProcessAdd extends Thread {
     public Activity activity;
+    public ProgressDialog pd;
 
     // ProcessAddActivity Elements
     public EditText protocol;
@@ -35,8 +37,9 @@ public class ProcessAdd extends Thread {
     public Spinner serviceType;
     public Spinner pceType;
 
-    public ProcessAdd(Activity activity) {
+    public ProcessAdd(Activity activity, ProgressDialog pd) {
         this.activity = activity;
+        this.pd = pd;
     }
 
     @Override
@@ -55,6 +58,7 @@ public class ProcessAdd extends Thread {
                 }
             });
 
+            pd.cancel();
             return;
         }
 
@@ -83,6 +87,8 @@ public class ProcessAdd extends Thread {
                 }
             });
         }
+
+        pd.cancel();
     }
 
     // Private Methods
