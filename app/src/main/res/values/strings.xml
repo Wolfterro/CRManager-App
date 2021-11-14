@@ -104,5 +104,7 @@
     <string name="sportShooting">Tiro Desportivo</string>
     <string name="hunt">Caça</string>
     <string name="collection">Colecionamento</string>
-    
+
+    <string name="signUpUser">Cadastrar-se</string>
+    <string name="userCreateSuccessful">Usuário criado com sucesso!</string>
 </resources>

@@ -670,7 +670,7 @@
         </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/addProcessButton"
+                android:id="@+id/buttonSignup"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
@@ -678,7 +678,7 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/crmanager_colorPrimaryDark"
-                android:text="@string/add" />
+                android:text="@string/signUpUser" />
         </LinearLayout>
     </ScrollView>
 
