@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.github.wolfterro.crmanager.process.ProcessAdd;
 import com.github.wolfterro.crmanager.signUp.SignUp;
 
 public class SignUpActivity extends AppCompatActivity {
