@@ -63,6 +63,7 @@
 
     <string name="confirmDeleteTitle">Remover processo</string>
     <string name="confirmDeleteDialog">Tem certeza que deseja remover este processo?</string>
+    <string name="removingProcess">Removendo processo</string>
     <string name="processDeletedMessage">Processo removido com sucesso!</string>
     <string name="couldNotDeleteProcessMessage">Não foi possível remover o processo!</string>
     <string name="yes">Sim</string>

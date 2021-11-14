@@ -5,16 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.wolfterro.crmanager.process.ProcessDelete;
-import com.github.wolfterro.crmanager.utils.API;
 import com.github.wolfterro.crmanager.utils.Utils;
 
 import org.json.JSONException;
@@ -86,8 +85,7 @@ public class ProcessDetailActivity extends AppCompatActivity {
                 .setTitle(R.string.confirmDeleteTitle)
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        ProcessDelete processDelete = new ProcessDelete(activity, processId);
-                        processDelete.start();
+                        startProcessDeleteProcess();
                     }
                 })
                 .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
@@ -97,6 +95,19 @@ public class ProcessDetailActivity extends AppCompatActivity {
                 });
 
         return builder.create();
+    }
+
+    public void startProcessDeleteProcess() {
+        ProgressDialog pd = new ProgressDialog(ProcessDetailActivity.this);
+
+        pd.setTitle(getString(R.string.removingProcess));
+        pd.setMessage(getString(R.string.pleaseStandBy));
+
+        pd.setCancelable(false);
+        pd.show();
+
+        ProcessDelete processDelete = new ProcessDelete(ProcessDetailActivity.this, this.processId, pd);
+        processDelete.start();
     }
 
     private void getProcessDetail() {

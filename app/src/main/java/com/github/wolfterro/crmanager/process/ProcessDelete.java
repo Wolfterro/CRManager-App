@@ -2,6 +2,7 @@ package com.github.wolfterro.crmanager.process;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.widget.Toast;
 
 import com.github.wolfterro.crmanager.R;
@@ -10,17 +11,21 @@ import com.github.wolfterro.crmanager.utils.API;
 public class ProcessDelete extends Thread {
 
     public Activity activity;
+    public ProgressDialog pd;
     public Integer processId;
 
-    public ProcessDelete(Activity activity, Integer processId) {
+    public ProcessDelete(Activity activity, Integer processId, ProgressDialog pd) {
         this.activity = activity;
         this.processId = processId;
+        this.pd = pd;
     }
 
     @Override
     public void run() {
         int status = API.deleteProcess(processId);
         showToast(status);
+
+        this.pd.cancel();
     }
 
     @SuppressLint("DefaultLocale")
