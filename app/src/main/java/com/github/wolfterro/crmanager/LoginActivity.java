@@ -18,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     public EditText email = null;
     public EditText password = null;
     public Button loginButton = null;
+    public Button signUpButton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         email = (EditText) findViewById(R.id.loginEmail);
         password = (EditText) findViewById(R.id.loginPassword);
         loginButton = (Button) findViewById(R.id.buttonLogin);
+        signUpButton = (Button) findViewById(R.id.buttonSignup);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -35,6 +37,14 @@ public class LoginActivity extends AppCompatActivity {
                 String password_string = password.getText().toString();
 
                 startLoginProcess(email_string, password_string);
+            }
+        });
+
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(i);
             }
         });
     }

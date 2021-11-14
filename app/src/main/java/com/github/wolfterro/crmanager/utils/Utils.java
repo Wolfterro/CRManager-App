@@ -14,11 +14,11 @@ public class Utils {
     public static boolean isDebug = true;
     public static String BASE_URL = getBaseURL();
 
-//    public static String USER_PROFILE_ID = null;
-//    public static String API_KEY = null;
+    public static String USER_PROFILE_ID = null;
+    public static String API_KEY = null;
 
-    public static String USER_PROFILE_ID = "8";
-    public static String API_KEY = "0802048490c5e5f6e56581360484c8eb9c41de4e";
+//    public static String USER_PROFILE_ID = "8";
+//    public static String API_KEY = "0802048490c5e5f6e56581360484c8eb9c41de4e";
 
     public static ArrayList<String> serviceTypeValuesList = new ArrayList<>();
 

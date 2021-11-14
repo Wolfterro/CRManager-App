@@ -66,4 +66,43 @@
     <string name="couldNotDeleteProcessMessage">Não foi possível remover o processo!</string>
     <string name="yes">Sim</string>
     <string name="no">Não</string>
+    
+    <!-- SignUp Strings -->
+    <string name="userSignUp">Cadastro de Usuário</string>
+    <string name="fullNameRequired">Nome completo: *</string>
+    <string name="emailRequired">E-mail: *</string>
+    <string name="passwordRequired">Senha: *</string>
+    <string name="passwordConfirmRequired">Confirme a senha: *</string>
+    <string name="birthdayRequired">Data de nascimento: *</string>
+    <string name="cpfRequired">CPF: *</string>
+    <string name="rgRequired">RG: *</string>
+
+    <string name="userAddress">Endereço de Acervo</string>
+    <string name="secondUserAddress">Segundo Endereço de Acervo</string>
+
+    <string name="addressRequired">Endereço: *</string>
+    <string name="numberRequired">Número: *</string>
+    <string name="zipCodeRequired">CEP: *</string>
+    <string name="neighborhoodRequired">Bairro: *</string>
+    <string name="cityRequired">Cidade: *</string>
+    <string name="ufRequired">UF: *</string>
+
+    <string name="address">Endereço: </string>
+    <string name="number">Número: </string>
+    <string name="complement">Complemento: </string>
+    <string name="zipCode">CEP: </string>
+    <string name="neighborhood">Bairro: </string>
+    <string name="city">Cidade: </string>
+    <string name="uf">UF: </string>
+    
+    <string name="registryCertificate">Certificado de Registro (CR)</string>
+    <string name="crNumber">Número: </string>
+    <string name="crExpiratonDate">Data de validade: </string>
+    <string name="crRM">Região Militar (RM): </string>
+    <string name="crActivities">Atividades Autorizadas: </string>
+
+    <string name="sportShooting">Tiro Desportivo</string>
+    <string name="hunt">Caça</string>
+    <string name="collection">Colecionamento</string>
+    
 </resources>

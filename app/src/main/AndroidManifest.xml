@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CRManager">
 
+        <!-- SignUpActivity -->
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CRManager.NoActionBar.FullScreen" />
+
         <!-- ProcessDetailActivity -->
         <activity
             android:name=".ProcessDetailActivity"
