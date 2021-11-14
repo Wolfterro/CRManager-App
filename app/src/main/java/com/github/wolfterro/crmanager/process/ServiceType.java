@@ -3,6 +3,7 @@ package com.github.wolfterro.crmanager.process;
 import android.app.Activity;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.github.wolfterro.crmanager.R;
 import com.github.wolfterro.crmanager.utils.API;
@@ -53,13 +54,18 @@ public class ServiceType extends Thread {
     }
 
     private void setServiceTypeOnSpinner(ArrayList<String> serviceTypeList) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this.activity,
-                R.layout.custom_spinner_item,
-                serviceTypeList
-        );
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        serviceTypeSpinner.setAdapter(adapter);
+
+        this.activity.runOnUiThread(new Runnable() {
+            public void run() {
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                        activity,
+                        R.layout.custom_spinner_item,
+                        serviceTypeList
+                );
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                serviceTypeSpinner.setAdapter(adapter);
+            }
+        });
     }
 
 }
