@@ -100,4 +100,7 @@ public class UserProfile extends Thread {
         }
     }
 
+    public JSONObject getUserProfile() {
+        return this.userProfile;
+    }
 }

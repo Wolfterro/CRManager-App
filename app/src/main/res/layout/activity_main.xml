@@ -20,6 +20,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/userProfileCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="10dp"
@@ -114,17 +115,18 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addProcessActionButton"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:clickable="true"
         android:focusable="true"
         android:backgroundTint="@color/crmanager_colorPrimaryDark"
         app:maxImageSize="48dp"
+        app:fabSize="normal"
         app:srcCompat="@drawable/ic_baseline_add_24" />
 
 </RelativeLayout>

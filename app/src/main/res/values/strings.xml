@@ -68,7 +68,7 @@
     <string name="couldNotDeleteProcessMessage">Não foi possível remover o processo!</string>
     <string name="yes">Sim</string>
     <string name="no">Não</string>
-    
+
     <!-- SignUp Strings -->
     <string name="userSignUp">Cadastro de Usuário</string>
     <string name="fullNameRequired">Nome completo: *</string>
@@ -97,7 +97,7 @@
     <string name="neighborhood">Bairro: </string>
     <string name="city">Cidade: </string>
     <string name="uf">UF: </string>
-    
+
     <string name="registryCertificate">Certificado de Registro (CR)</string>
     <string name="crNumber">Número: </string>
     <string name="crExpiratonDate">Data de validade: </string>
