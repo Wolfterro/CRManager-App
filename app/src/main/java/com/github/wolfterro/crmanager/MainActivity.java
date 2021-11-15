@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.wolfterro.crmanager.login.UserProfile;
 import com.github.wolfterro.crmanager.process.Process;
@@ -74,5 +73,14 @@ public class MainActivity extends AppCompatActivity {
         /* Retrieve Process Information */
         Process process = new Process(this, recyclerView);
         process.start();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(Intent.ACTION_MAIN);
+        i.addCategory(Intent.CATEGORY_HOME);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        startActivity(i);
     }
 }
