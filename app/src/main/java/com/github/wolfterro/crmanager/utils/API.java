@@ -105,6 +105,30 @@ public class API {
         }
     }
 
+    public static String signUp(JSONObject body) {
+        OkHttpClient client = new OkHttpClient();
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
+        Request request = new Request.Builder()
+                .url(String.format("%s%s", Utils.BASE_URL, "user_profile/"))
+                .post(RequestBody.create(JSON, body.toString()))
+                .build();
+
+        Call call = client.newCall(request);
+        try {
+            Response response = call.execute();
+            if(response.isSuccessful()) {
+                return response.body().string();
+            }
+            Log.i("RESPONSE", response.body().string());
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e("ERROR", e.toString());
+        }
+
+        return null;
+    }
+
     /* Private Methods */
     private static JSONObject getResponse(String url) {
         OkHttpClient client = new OkHttpClient();

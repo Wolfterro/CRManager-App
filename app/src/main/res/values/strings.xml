@@ -78,6 +78,7 @@
     <string name="birthdayRequired">Data de nascimento: *</string>
     <string name="cpfRequired">CPF: *</string>
     <string name="rgRequired">RG: *</string>
+    <string name="photo">URL da foto: </string>
 
     <string name="userAddress">Endereço de Acervo</string>
     <string name="secondUserAddress">Segundo Endereço de Acervo</string>
@@ -107,6 +108,9 @@
     <string name="hunt">Caça</string>
     <string name="collection">Colecionamento</string>
 
+    <string name="checkPassword">Senhas diferentes! Verifique a senha inserida e tente novamente</string>
+
     <string name="signUpUser">Cadastrar-se</string>
+    <string name="couldNotCreateUser">Não foi possível cadastrar seu usuário! Tente novamente mais tarde</string>
     <string name="userCreateSuccessful">Usuário criado com sucesso!</string>
 </resources>
