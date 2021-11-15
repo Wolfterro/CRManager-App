@@ -113,4 +113,15 @@
     <string name="signUpUser">Cadastrar-se</string>
     <string name="couldNotCreateUser">Não foi possível cadastrar seu usuário! Tente novamente mais tarde</string>
     <string name="userCreateSuccessful">Usuário criado com sucesso!</string>
+
+    <!-- UserProfileDetail Strings -->
+    <string name="userInformations">Informações do Usuário</string>
+
+    <string name="fullNameDetail">Nome completo: </string>
+    <string name="emailDetail">E-mail: </string>
+    <string name="passwordDetail">Senha: </string>
+    <string name="passwordConfirmDetail">Confirme a senha: </string>
+    <string name="birthdayDetail">Data de nascimento: </string>
+    <string name="cpfDetail">CPF: </string>
+    <string name="rgDetail">RG: </string>
 </resources>
