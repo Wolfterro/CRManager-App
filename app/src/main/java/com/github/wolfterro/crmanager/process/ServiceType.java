@@ -21,10 +21,15 @@ public class ServiceType extends Thread {
     public Spinner serviceTypeSpinner;
 
     public JSONArray serviceType;
+    public JSONObject processDetail;
+    public Boolean isEdit = false;
 
-    public ServiceType(Activity activity, Spinner serviceTypeSpinner) {
+    public ServiceType(Activity activity, Spinner serviceTypeSpinner, JSONObject processDetail, Boolean isEdit) {
         this.activity = activity;
         this.serviceTypeSpinner = serviceTypeSpinner;
+
+        this.processDetail = processDetail;
+        this.isEdit = isEdit;
     }
 
     @Override
@@ -64,6 +69,15 @@ public class ServiceType extends Thread {
                 );
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 serviceTypeSpinner.setAdapter(adapter);
+
+                if(isEdit) {
+                    try {
+                        int valuePos = adapter.getPosition(processDetail.getString("service_label"));
+                        serviceTypeSpinner.setSelection(valuePos);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         });
     }

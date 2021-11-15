@@ -97,7 +97,7 @@ public class ProcessAddActivity extends AppCompatActivity {
     }
 
     private void setServiceTypeSpinner() {
-        ServiceType serviceTypeThread = new ServiceType(this, this.serviceType);
+        ServiceType serviceTypeThread = new ServiceType(this, this.serviceType, null,false);
         serviceTypeThread.start();
     }
 

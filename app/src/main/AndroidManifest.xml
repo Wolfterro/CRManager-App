@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CRManager">
 
+        <!-- ProcessEditActivity -->
+        <activity
+            android:name=".ProcessEditActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CRManager.NoActionBar.FullScreen" />
+
         <!-- UserProfileDetailActivity -->
         <activity
             android:name=".UserProfileDetailActivity"

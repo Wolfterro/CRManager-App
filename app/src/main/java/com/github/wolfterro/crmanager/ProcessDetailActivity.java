@@ -4,7 +4,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -36,6 +35,7 @@ public class ProcessDetailActivity extends AppCompatActivity {
     public TextView pceType;
     public TextView pceQuantity;
 
+    public Button editButton;
     public Button deleteButton;
 
     public JSONObject processDetail;
@@ -57,18 +57,28 @@ public class ProcessDetailActivity extends AppCompatActivity {
         pceManufacturer = (TextView) findViewById(R.id.textViewManufacturerDetail);
         pceType = (TextView) findViewById(R.id.textViewPceTypeDetail);
         pceQuantity = (TextView) findViewById(R.id.textViewQuantityDetail);
+        editButton = (Button) findViewById(R.id.editProcessButton);
         deleteButton = (Button) findViewById(R.id.deleteProcessButton);
 
         getProcessDetail();
         setValues();
 
-        AlertDialog deletedialog = setDeleteConfirmDialog();
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ProcessDetailActivity.this, ProcessEditActivity.class);
 
+                i.putExtra("PROCESS_JSON", processDetail.toString());
+                startActivity(i);
+            }
+        });
+
+        AlertDialog deleteDialog = setDeleteConfirmDialog();
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(processId != null) {
-                    deletedialog.show();
+                    deleteDialog.show();
                 }
             }
         });
@@ -77,8 +87,6 @@ public class ProcessDetailActivity extends AppCompatActivity {
     // Private Methods
     @SuppressLint("DefaultLocale")
     private AlertDialog setDeleteConfirmDialog() {
-        Activity activity = this;
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setMessage(R.string.confirmDeleteDialog)

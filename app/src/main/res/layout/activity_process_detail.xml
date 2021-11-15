@@ -23,7 +23,7 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textAlignment="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
                 android:text="@string/protocolNumberDetail" />
 
@@ -273,6 +273,17 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/editProcessButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/crmanager_colorPrimaryDark"
+                android:text="@string/edit" />
 
             <Button
                 android:id="@+id/deleteProcessButton"

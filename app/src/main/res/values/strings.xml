@@ -59,6 +59,7 @@
     <string name="pceTypeDetail">Tipo de PCE: </string>
     <string name="quantityDetail">Quantidade: </string>
 
+    <string name="edit">Editar</string>
     <string name="delete">Remover</string>
 
     <string name="confirmDeleteTitle">Remover processo</string>
@@ -124,4 +125,7 @@
     <string name="birthdayDetail">Data de nascimento: </string>
     <string name="cpfDetail">CPF: </string>
     <string name="rgDetail">RG: </string>
+
+    <!-- ProcessEdit Strings -->
+    <string name="editProcess">Editar Processo</string>
 </resources>
