@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import com.github.wolfterro.crmanager.login.Login;
 import com.github.wolfterro.crmanager.process.ProcessAdd;
 import com.github.wolfterro.crmanager.process.ServiceType;
 

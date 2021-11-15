@@ -128,4 +128,7 @@
 
     <!-- ProcessEdit Strings -->
     <string name="editProcess">Editar Processo</string>
+    <string name="editingProcess">Editando processo</string>
+    <string name="processEditedMessage">Processo editado com sucesso!</string>
+    <string name="couldNotEditProcess">Não foi possível editar o processo! Tente novamente mais tarde</string>
 </resources>

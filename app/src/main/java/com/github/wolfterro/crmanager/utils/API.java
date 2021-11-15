@@ -83,6 +83,28 @@ public class API {
     }
 
     @SuppressLint("DefaultLocale")
+    public static int editProcess(JSONObject body, int id) {
+        OkHttpClient client = new OkHttpClient();
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
+        Request request = new Request.Builder()
+                .url(String.format("%s%s%d/", Utils.BASE_URL, "process/", id))
+                .addHeader("Authorization", String.format("Token %s", Utils.API_KEY))
+                .patch(RequestBody.create(JSON, body.toString()))
+                .build();
+
+        Call call = client.newCall(request);
+        try {
+            Response response = call.execute();
+            return response.code();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e("ERROR", e.toString());
+            return 0;
+        }
+    }
+
+    @SuppressLint("DefaultLocale")
     public static int deleteProcess(int id) {
         OkHttpClient client = new OkHttpClient();
 

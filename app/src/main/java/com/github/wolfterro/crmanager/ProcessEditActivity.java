@@ -2,6 +2,7 @@ package com.github.wolfterro.crmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.github.wolfterro.crmanager.process.ProcessAdd;
+import com.github.wolfterro.crmanager.process.ProcessEdit;
 import com.github.wolfterro.crmanager.process.ServiceType;
 import com.github.wolfterro.crmanager.utils.Utils;
 
@@ -20,6 +23,7 @@ import org.json.JSONObject;
 public class ProcessEditActivity extends AppCompatActivity {
 
     public JSONObject processDetail;
+    public int id;
 
     // ProcessEditActivity Elements
     public EditText protocol;
@@ -48,11 +52,11 @@ public class ProcessEditActivity extends AppCompatActivity {
         instantiateElements();
         setElementValues();
 
-        editProcess = (Button) findViewById(R.id.editProcessButton);
+        editProcess = (Button) findViewById(R.id.editProcessButtonEdit);
         editProcess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                startProcessEditProcess();
             }
         });
     }
@@ -64,6 +68,7 @@ public class ProcessEditActivity extends AppCompatActivity {
 
         try {
             processDetail = new JSONObject(processDetailString);
+            id = processDetail.getInt("id");
         } catch (JSONException e) {
             e.printStackTrace();
             Log.e("ERROR", e.toString());
@@ -179,5 +184,18 @@ public class ProcessEditActivity extends AppCompatActivity {
             e.printStackTrace();
             Log.e("ERROR", e.toString());
         }
+    }
+
+    public void startProcessEditProcess() {
+        ProgressDialog pd = new ProgressDialog(ProcessEditActivity.this);
+
+        pd.setTitle(getString(R.string.editingProcess));
+        pd.setMessage(getString(R.string.pleaseStandBy));
+
+        pd.setCancelable(false);
+        pd.show();
+
+        ProcessEdit processEdit = new ProcessEdit(this, pd, this.id);
+        processEdit.start();
     }
 }
