@@ -49,9 +49,9 @@
 
                 <EditText
                     android:id="@+id/loginEmail"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="18"
+                    android:ems="10"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="20dp"
                     android:inputType="textEmailAddress" />
@@ -68,9 +68,9 @@
 
                 <EditText
                     android:id="@+id/loginPassword"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="18"
+                    android:ems="10"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="20dp"
                     android:inputType="textPassword" />
