@@ -131,7 +131,7 @@ public class Utils {
 
     private static String getBaseURL() {
         if(isDebug) {
-            return "http://192.168.0.219:8000/";
+            return "https://backend-crmanager.herokuapp.com/"; // "http://192.168.0.219:8000/";
         } else {
             return "";
         }

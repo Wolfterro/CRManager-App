@@ -103,6 +103,7 @@ public class ProcessListAdapter extends RecyclerView.Adapter<ProcessViewHolder>{
                 public void onClick(View view) {
                     Intent i = new Intent(activity, ProcessDetailActivity.class);
                     i.putExtra("PROCESS_JSON", processJson.toString());
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                     activity.startActivity(i);
                 }

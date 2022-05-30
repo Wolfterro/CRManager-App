@@ -64,6 +64,7 @@ public class Login extends Thread {
             pd.dismiss();
 
             Intent i = new Intent(c, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             c.startActivity(i);
         }
     };

@@ -191,6 +191,7 @@ public class ProcessEdit extends Thread {
 
                     Intent i = new Intent(activity, MainActivity.class);
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     activity.startActivity(i);
                 } else {
                     String message = String.format(

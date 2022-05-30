@@ -36,6 +36,7 @@ public class SplashActivity extends AppCompatActivity {
                     SplashActivity.this, LoginActivity.class
             );
         }
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
     }

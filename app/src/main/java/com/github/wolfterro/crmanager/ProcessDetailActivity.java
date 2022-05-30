@@ -69,6 +69,7 @@ public class ProcessDetailActivity extends AppCompatActivity {
                 Intent i = new Intent(ProcessDetailActivity.this, ProcessEditActivity.class);
 
                 i.putExtra("PROCESS_JSON", processDetail.toString());
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
             }
         });

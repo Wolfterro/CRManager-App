@@ -326,6 +326,7 @@ public class SignUp extends Thread {
 
             // Start MainActivity
             Intent i = new Intent(this.activity, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             this.activity.startActivity(i);
         } catch (JSONException e) {
             e.printStackTrace();

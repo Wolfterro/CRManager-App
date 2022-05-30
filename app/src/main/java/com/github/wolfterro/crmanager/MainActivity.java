@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ProcessAddActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
             }
         });
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 if(userProfile.getUserProfile() != null) {
                     Intent i = new Intent(MainActivity.this, UserProfileDetailActivity.class);
                     i.putExtra("USERPROFILE", userProfile.getUserProfile().toString());
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                     startActivity(i);
                 }
